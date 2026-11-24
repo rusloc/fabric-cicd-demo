@@ -1,0 +1,19 @@
+expression WorkspaceId = "fa5ef562-84b9-4a60-a006-5660a27f014a" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = "Text"]
+	lineageTag: d209b87b-8404-511d-bca1-3a00a8e3b6ca
+
+	annotation PBI_ResultType = Text
+
+expression LakehouseId = "e4c57cf0-3ef9-442d-bf53-196ec96f879f" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = "Text"]
+	lineageTag: fd59ccd2-87b8-5054-ba0a-0fce446f29e5
+
+	annotation PBI_ResultType = Text
+
+expression 'DirectLake - lh_cicd_demo' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/" & WorkspaceId & "/" & LakehouseId, [HierarchicalNavigation = true])
+		in
+		    Source
+	lineageTag: 8d710a6a-c1a8-52cc-9d4c-f512e8be97d7
+
+	annotation PBI_IncludeFutureArtifacts = False
+

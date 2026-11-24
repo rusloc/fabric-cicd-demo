@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Sales CICD"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "76a6ffc6-5368-4c12-8a7a-f219ff051e42"
+  }
+}
